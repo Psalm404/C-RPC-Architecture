@@ -56,7 +56,6 @@ void acceptConn(FDInfo* info){
 }
 
 void communication(FDInfo* info){
-    // std::cout << "communication:threadID:" << std::this_thread::get_id() << std::endl;
     char buffer[1024];
     int bytesReceived = recv(info->fd, buffer, sizeof(buffer), 0);
 
