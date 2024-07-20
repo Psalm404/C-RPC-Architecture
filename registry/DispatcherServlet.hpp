@@ -70,7 +70,6 @@ void IOSelect() {
                     clientPort = ntohs(clientAddr.sin_port);
                     //std::cout << "Client connected: " << clientip << ":" << clientPort << std::endl;
                 } else {
-                  //  std::cout << "communication:pthreadID:" << pthread_self() << std::endl;
                     char buffer[1024];
                     int bytesReceived = recv(event_fd, buffer, sizeof(buffer), 0);
 
@@ -93,7 +92,7 @@ void IOSelect() {
                             }
                         }
                         if (bytesReceived == 0){
-                            //std::cout << clientip << ":" << clientPort << " 断开连接 " << std::endl;
+                            std::cout << clientip << ":" << clientPort << " 断开连接 " << std::endl;
                         }
 
                     } else {
